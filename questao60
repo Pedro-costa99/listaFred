@@ -1,0 +1,42 @@
+int main()
+{   setlocale(LC_ALL, "");
+    int numero;
+    int vetor [25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    int aux [25] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
+    int codigo1;
+    int codigo2;
+    int codigo3;
+    int codigo4;
+
+    printf("Informe o número par maior do que 2:\n");
+    scanf("%i", &numero);
+
+    while (numero < 2){
+        printf("Por gentileza, informe um número maior do que 2. \n");
+        scanf("%i", &numero);
+    }
+
+    for (int i = 0; i < 25; i++){
+        for (int j = 0; j < 25; j++){
+                codigo1 = i;
+                codigo2 = j;
+
+            if (vetor [codigo1] + aux [codigo2] == numero){
+                break;
+            }
+
+        }
+        if (vetor [codigo1] + aux [codigo2] == numero)
+            break;
+    }
+        if (vetor [codigo1] + aux [codigo2] == numero){
+            printf("Número par: %i\n", numero);
+            printf("Os números primos somados são: %i e %i\n", vetor[codigo1], aux [codigo2]);
+
+        }
+
+        if (vetor [codigo1] + aux [codigo2] != numero)
+            printf ("Não há números primos que somados dão %i. Desculpe.\n", numero);
+
+    return 0;
+}
