@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <ctype.h>
+//preciso revisar nome das variáveis
+//como transformar o dado digitado em minusculo em maisculo?
+int main()
+{
+    setlocale(LC_ALL, "");
+    char letra [50];
+    int decimal = 0;
+    int aux = 0;
+    int codigo =0, codigo2 =0, codigo3=0, codigo4=0, codigo7=0, codigo8 =0, codigo9 =0, codigo10=0, codigo11 = 0;
+    int i = 0;
+    int codigo5;
+    int codigo6;
+
+    printf("Informe a expressão em algarismo romano: \n");
+    scanf("%s",letra);
+
+
+    for (i = 0; i < strlen (letra); i++){
+
+           
+
+    if (letra [i] == 'C' && letra [i+1] == 'M'){
+        decimal+=900;
+        codigo11 = 11;
+    }
+
+    if (letra [i] == 'M' && codigo11 != 11)
+        decimal += 1000;
+
+    if (letra [i] == 'C' && letra [i+1] =='D'){
+        decimal+=400;
+        codigo10 = 10;}
+
+    if (letra [i] == 'D' && codigo10 != 10)
+        decimal += 500;
+
+    if (letra [i] == 'X' && letra [i+1] == 'C'){
+        decimal += 90;
+        codigo5 = 5;
+        
+        }
+
+    if (letra [i] == 'C' && codigo5 !=5 && codigo10 != 10 && codigo11 != 11)
+        decimal += 100;
+
+    if (letra [i] == 'L' && letra [i+1] == 'X' && letra [i+2] == 'X' && letra [i+3] == 'X'){
+        decimal += 80;
+        codigo9 = 9;}
+
+    if (letra [i] == 'L' && letra [i+1] == 'X' && letra [ i+2] == 'X' && codigo9 !=9){
+        decimal += 70;
+        codigo8 = 8;}
+
+    if (letra [i] == 'X' && letra [i+1] == 'L' && codigo8 != 8) {
+        decimal += 40;
+        codigo6 = 6;
+       
+        }
+
+    if (letra [i] == 'L' && letra [i+1] == 'X' && codigo8 != 8 && codigo9 !=9){
+        decimal += 60;
+        codigo7 = 7;
+
+        }  
+
+
+    if (letra [i] == 'L' && codigo7 != 7 && letra [i] == 'L' && codigo6 != 6 && letra [i] == 'L'&& codigo8 != 8 && letra [i] == 'L'&& codigo9 !=9){
+        decimal += 50;
+        
+        }
+
+    if (letra [i] == 'I' && letra [i+1] == 'X') {
+        decimal += 9;
+        codigo2 = 3;
+        codigo3 = 4;
+        }
+        
+
+    if ((letra [i] == 'X' && codigo3 != 4) && (letra [i] == 'X' && codigo5 != 5) && (letra [i] == 'X' && codigo6 != 6) && (letra [i] == 'X' && codigo6 != 6) && (letra [i] == 'X' && codigo7 != 7) && (letra [i] == 'X' &&codigo8 != 8) && codigo9 !=9){
+       decimal += 10;
+       
+       }
+
+
+    if (letra [i] == 'I' && letra [i+1] == 'V'){
+        decimal += 4;
+        codigo = 1;
+        }
+
+    if (letra [i] == 'V' && codigo != 1)
+        decimal += 5;
+
+
+    if (letra [i] == 'I' && codigo != 1 && letra [i] == 'I' && codigo2 != 3)
+        decimal += 1;
+
+      
+
+}
+       
+
+    printf("Numero romano em decimal: %i\n", decimal);
+
+
+
+        return 0;
+
+}
+
