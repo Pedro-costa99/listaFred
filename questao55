@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h> 
+
+int main()
+{   int n1, n2;
+    int soma_num1 = 0;
+    int soma_num2 = 0; 
+    int resto1, resto2; 
+    
+    printf("Informe um número: \n");
+    scanf ("%i", &n1); 
+    
+    printf("Informe um número: \n");
+    scanf ("%i", &n2);
+    
+    // o nº será divido pelo intervalo de 1 a 300. 
+    // divisão com denominador 0 gera erro no processamento, não rodando o programa. 
+    //printf ("Divisores de n1: "); 
+    for (int i = 1; i <= 300; i++){
+        
+        resto1 = n1%i;
+        if (resto1 == 0) 
+        soma_num1 = soma_num1 + i;
+        
+        resto2 = n2%i; 
+        if (resto2 == 0)
+        soma_num2 = soma_num2 + i;
+    }
+    
+    if (soma_num1 > n1)
+    soma_num1 = soma_num1 - n1; 
+    else 
+    soma_num1 = n1 - soma_num1;
+    
+    if (soma_num2 > n2)
+    soma_num2 = soma_num2 - n2; 
+    else 
+    soma_num2 = n2 - soma_num2; 
+    
+   //printf ("SOma1: %i\n", soma_num1); 
+   
+   
+    
+    if (soma_num1 == n2 && soma_num2 == n1){
+        printf ("Os números %i e %i são amigos: \n", n1, n2);
+        printf ("Soma dos divisores do número %i: %i\n", n1, soma_num1); 
+        printf ("Soma dos divisores do número %i: %i\n", n2, soma_num2);
+    } else {
+        printf ("O número %i e %i não são amigos. \n", n1, n2); 
+        printf ("Soma dos divisores do número %i: %i\n", n1, soma_num1); 
+        printf ("Soma dos divisores do número %i: %i\n", n2, soma_num2);
+    } 
+    
+    
+
+    return 0;
+}
