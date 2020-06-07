@@ -1,0 +1,27 @@
+int main()
+{
+    float tempo;
+    float distancia;
+    float velocidadeVia;
+    float aceleracaoCarro;
+
+
+    printf("Informe a distancia (km/h) de um semaforo a outro: \n");
+    scanf("%f", &distancia);
+
+    printf("Informe a velocidade (km/h) permitida da vida : \n");
+    scanf("%f", &velocidadeVia);
+
+    printf("Informe a aceleracao (km/h) tipica dos carros: \n");
+    scanf("%f", &aceleracaoCarro);
+
+    tempo = distancia/ aceleracaoCarro;
+    tempo = tempo * 60;// minuto
+    tempo = tempo * 60;// segundos
+    tempo = tempo - 3;
+
+    printf("O semaforo da frente deve abrir %.2f segundos depois", tempo);
+
+
+    return 0;
+}
