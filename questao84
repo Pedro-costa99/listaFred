@@ -1,0 +1,36 @@
+
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main()
+{   setlocale(LC_ALL, "Portuguese");
+    char str [20] = {};
+    char aux [20] = {};
+    int codigo =0;
+    int soma =0;
+
+    // reviver
+    printf("Informe a string: \n");
+    gets (str);
+
+    //i = do 0 a 7 = 8 posições
+    //j = do 6 a 0 = 7 posições // 7
+    for (int i = 0, j = strlen (str)-1; i < strlen (str), j >=0; i++, j--){
+            //soma +=1;
+            //printf("%c", str [i] );
+            //printf("%c", str [j] );
+      if (str [i] != str [j]){
+           codigo = codigo + 1;
+          printf ("A string %s não é um palíndrome", str);
+           break;
+        }
+
+    }
+
+    if (codigo == 0)
+       printf("A string %s é um palíndrome.", str);
+    //printf("Soma: %i", soma);
+
+    return 0;
+}
