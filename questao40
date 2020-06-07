@@ -1,0 +1,171 @@
+#include <stdio.h>
+
+int main()
+{   int numero;
+    int unidade, dezena; 
+    
+    
+    printf("Informe um número de 1 a 100: \n"); // criar exceção de impedimento 
+    scanf ("%i", &numero); 
+    
+    if (numero >=1 && numero <=19)
+    {
+            switch (numero)
+        {
+            case 1 :
+            printf ("Um\n"); 
+            break;
+            
+            case 2 :
+            printf ("Dois\n"); 
+            break;
+            
+            case 3 :
+            printf ("Três\n"); 
+            break;
+            
+            case 4 :
+            printf ("Quatro\n"); 
+            break;
+            
+            case 5 :
+            printf ("Cinco\n"); 
+            break;
+            
+            case 6 :
+            printf ("Seis\n"); 
+            break;
+            
+            case 7 :
+            printf ("sete\n"); 
+            break;
+            
+            case 8 :
+            printf ("Oito\n"); 
+            break;
+            
+            case 9 :
+            printf ("Nove\n"); 
+            break;
+            
+            case 10 :
+            printf ("Dez\n"); 
+            break;
+            
+            case 11 :
+            printf ("Onze\n"); 
+            break;
+            
+            case 12 :
+            printf ("Doze\n"); 
+            break;
+            
+            case 13 :
+            printf ("Treze\n"); 
+            break;
+            
+            case 14 :
+            printf ("Quatorze\n"); 
+            break;
+            
+            case 15 :
+            printf ("Quinze\n"); 
+            break;
+            
+            case 16 :
+            printf ("Dezesseis\n"); 
+            break;
+            
+            case 17 :
+            printf ("Dezessete\n"); 
+            break;
+            
+            case 18 :
+            printf ("Dezoito\n"); 
+            break;
+            
+            case 19 :
+            printf ("Dezenove\n"); 
+            break;
+        }
+    }
+    
+    else if (numero == 100)
+    printf ("Cem. ");
+    
+    
+    else
+    {
+         dezena = numero/10;
+         unidade = numero%10; 
+         
+         if (dezena == 2)
+             printf ("Vinte ");
+             
+         else if (dezena == 3)
+             printf ("Trinta ");
+         
+         
+         else if (dezena == 4)
+             printf ("Quarenta ");
+         
+         
+         else if (dezena == 5)
+             printf ("Cinquenta ");
+         
+         
+         else if (dezena == 6)
+             printf ("Sessenta ");
+         
+         
+         else if (dezena == 7)
+             printf ("Setenta ");
+         
+         else if (dezena == 8)
+             printf ("Oitenta ");
+         
+         else if (dezena == 9)
+             printf ("Noventa ");
+         
+         else
+             printf ("."); 
+         
+         
+         if (unidade == 0)
+             printf (".");
+         
+         else if (unidade == 1)
+             printf ("e um.\n"); 
+         
+         else if (unidade == 2)
+             printf ("e dois.\n"); 
+         
+         else if (unidade == 3)
+             printf ("e três.\n"); 
+         
+         else if (unidade == 4)
+             printf ("e quatro.\n"); 
+         
+         else if (unidade == 5)
+             printf ("e cinco.\n"); 
+         
+         else if (unidade == 6)
+             printf ("e seis.\n"); 
+         
+         else if (unidade == 7)
+             printf ("e sete.\n"); 
+         
+         else if (unidade == 8)
+             printf ("e oito.\n"); 
+         
+         else if (unidade == 9)
+             printf ("e nove.\n"); 
+        
+        else
+            printf ("."); 
+         
+    }
+    
+    
+    return 0;
+}
