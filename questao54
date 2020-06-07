@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{   setlocale(LC_ALL, "");
+    int numero;
+    int codigo1, codigo2, codigo3;
+    printf("Informe um número: \n");
+    scanf("%i", &numero);
+
+
+    for (int i = 1; i <9; i++){
+        for (int j = 1; j <9; j++){
+            for (int k = 1; k <9; k++){
+                if (i * j * k == numero){
+                    printf("O número %i é um número triangular. \n", numero);
+                    codigo1 = i;
+                    codigo2 = j;
+                    codigo3 = k;
+                    printf("Valor de i: %i\n", i);
+                    printf("Valor de j: %i\n", j);
+                    printf("Valor de k: %i\n", k);
+                }
+                if (codigo1 * codigo2 * codigo3 == numero)
+                    break;
+            }
+            if (codigo1 * codigo2 * codigo3 == numero)
+                   break;
+        }
+        if (codigo1 * codigo2 * codigo3 == numero)
+                    break;
+    }
+
+    if (codigo1 * codigo2 * codigo3 != numero)
+        printf("O número %i não é um número triangular. \n", numero);
+    return 0;
+}
