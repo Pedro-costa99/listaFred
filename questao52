@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int penultimo;
+    int fim;
+    int atual;
+    int numero;
+    int result;
+    int aux;
+
+    printf("Informe a quantidade de termos da serie: \n");
+    scanf("%i", &numero);
+
+    printf("Informe o primeiro termo:\n");
+    scanf("%i", &penultimo);
+
+    printf("Informe o segundo termo:\n");
+    scanf("%i", &fim);
+
+    printf("Serie: ");
+    printf("%i %i ", penultimo, fim);
+
+    for (int i = 1; i <= numero-2; i++){
+
+        if ( i%2 == 0){
+        atual = fim - penultimo;// 1 1 2 4 5 6
+        printf("%i ", atual);
+        //aux = fim;
+        penultimo = fim;
+        fim = atual;
+
+        }
+
+        else{
+        atual = fim + penultimo; //1 1
+        printf("%i ", atual);
+        aux = fim;
+        fim = atual;
+        penultimo = aux;
+        }
+
+
+    }
+
+
+    return 0;
+}
