@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main()
+{   int n;
+    int fibo [46] = {1,1}; 
+    
+    printf("Informe um número: \n");
+    scanf ("%i", &n);
+    
+    while (n > 45){
+        printf("Valor não suportado. O nº pode ser <= 45: \n");
+        scanf ("%i", &n);
+    }
+    
+
+    for (int i = 2, j =0, k = 1 ; i <= n, j <= n, k <= n; i++, j++, k++){
+        
+        fibo [i]  = fibo [j] + fibo [k];
+        
+    }
+    
+    printf ("Série Fibonaaci: \n"); 
+    for (int i = 0; i <= n; i++){
+        printf ("%i ", fibo [i]); 
+    }
+    return 0;
+}
