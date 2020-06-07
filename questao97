@@ -1,0 +1,110 @@
+#include <stdio.h>
+
+int main()
+{   int matriz [3][3] = {};
+    int aux [3][3] = {};
+    int aux2 [3][3] = {};
+    int aux3 [3][3] = {}; 
+    int aux4 [3][3] = {};
+    int x, y; 
+
+    printf ("Prencha a matriz: \n\n"); 
+    for (int i = 0; i < 3; i ++){
+        for (int j = 0; j < 3; j++){
+            printf("Posição [%i][%i]:", i, j);
+            scanf ("%i", &matriz [i][j]); 
+        }
+    }
+    printf ("\n");
+    
+    printf ("Matriz: \n");
+    for (int i = 0; i < 3; i ++){
+        for (int j = 0; j < 3; j++){
+            printf("%i ", matriz [i][j]);
+             
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    
+    printf ("Informe um valor de X (0, 1 ou 2): \n");
+    scanf ("%i", &x);
+    while (x < 0 || x > 2){
+        printf ("Valor não suportado. O valor pode ser 0, 1 ou 2: \n");
+        scanf ("%i", &x);
+    }
+    
+    printf ("Informe um valor de Y (0, 1 ou 2): \n");
+    scanf ("%i", &y);
+    while (y < 0 || y > 2){
+        printf ("Valor não suportado. O valor pode ser 0, 1 ou 2: \n");
+        scanf ("%i", &y);
+    }
+    printf ("\n");
+    
+        //linha
+        for (int j = 0; j < 3; j++){
+            aux [x][j] = matriz [x][j];
+            matriz [x][j] = matriz [y][j];
+            matriz [y][j] = aux [x][j];
+        }
+        
+        printf ("Matriz modificada - linha %i trocada pela linha %i: \n", x, y);
+    for (int i = 0; i < 3; i ++){
+        for (int j = 0; j < 3; j++){
+            printf("%i ", matriz [i][j]);
+             
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+        //coluna 
+        for (int j = 0; j < 3; j++){
+            aux2 [j][x] = matriz [j][x];
+            matriz [j][x] = matriz [j][y];
+            matriz [j][y] = aux2 [j][x];
+        }
+        
+        printf ("Matriz modificada - coluna %i trocada pela coluna %i: \n", x, y);
+    for (int i = 0; i < 3; i ++){
+        for (int j = 0; j < 3; j++){
+            printf("%i ", matriz [i][j]);
+             
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+        //diagonais
+        
+        
+        for (int i = 1, k=0, j = 0, z = 1; i<=2, k <=1, j < 2, z <=2; i++, k++, j++, z++){
+            aux3 [i][k] = matriz [i][k];
+            matriz [i][k] = matriz [j][z];
+            matriz [j][z] = aux3 [i][k];
+             
+        }
+        
+    
+   
+    for (int i = 2; i > 0; i = i-2){
+        for (int j = 0; j <2; j = j + 2){
+            aux4 [i][j] = matriz [i][j]; 
+            matriz [i][j] = matriz [j][i]; 
+            matriz [j][i] = aux4 [i][j];
+        }
+         
+    }
+        
+    printf ("Matriz modificada - diagonal principal trocada pela diagonal secundária: \n");
+    for (int i = 0; i < 3; i ++){
+        for (int j = 0; j < 3; j++){
+            printf("%i ", matriz [i][j]);
+             
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    
+
+    return 0;
+}
