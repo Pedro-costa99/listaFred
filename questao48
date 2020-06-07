@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+    int numero; 
+    int resto; 
+    int divisor [8] = {2, 3, 5, 7, 11, 13, 17, 19}; 
+    int i; 
+    int quociente=0; 
+    
+    printf("Digite um número inteiro: \n");
+    scanf ("%i", &numero); 
+    
+    for ( i = 0; i < 8; i++){// i =0, 1 
+        resto = (numero % divisor [i]); 
+        if (resto == 0)
+        break; 
+        
+        quociente = numero / divisor [i]; 
+        if (quociente < divisor [i] && resto != 0) 
+        break; 
+    }
+    if (numero == 2 && resto ==0)
+    printf ("O número 2 é o único número par que é primo. \n"); 
+    
+    if (numero != 2 && resto == 0)
+    printf ("O número %i não é primo. \n", numero); 
+    
+    if (quociente < divisor[i] && resto != 0) 
+    printf ("O número %i é primo. \n", numero);
+    
+   
+    
+    return 0;
+}
