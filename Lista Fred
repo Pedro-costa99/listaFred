@@ -1,0 +1,61 @@
+#include <stdio.h>
+
+int main()
+{   int n; 
+    int m;
+    int p = 0;
+    int j; 
+    printf("Informe a dimensão horizontal (Linha) da matriz: \n");
+    scanf ("%i", &n);
+    
+    
+    printf("Informe a dimensão vertical (Coluna) da matriz: \n");
+    scanf ("%i", &m);
+    printf ("\n");
+    
+    
+    int matriz [n][m];
+    
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
+            printf ("Preencha a posição [%i][%i] da matriz: \n", i, j);
+            scanf ("%i", &matriz [i][j]);
+            
+        }
+    }
+    printf ("\n");
+    printf ("Matriz %iX%i: \n", n, m);
+    for (int i = 0; i < n; i++){
+        for (int j = 0; j < m; j++){
+            printf ("%i ", matriz [i][j]);
+            //scanf ("%i", &matriz [i][j]);
+            
+        }
+        printf ("\n");
+    }
+    printf ("\n");
+    
+    
+    
+    for (int i = 0; i < n; i++){
+        for (j = 0; j < m; j++){
+            
+            
+            if (matriz [j][i] == matriz [j+1][i]){
+                printf ("ATENÇÃO! A matriz não é um quadrado latino. \n");
+                p = p + 1; 
+                break;
+            }
+            
+            if (matriz [j][i] == matriz [j+1][i])
+            break; 
+        }
+        if (matriz [j][i] == matriz [j+1][i])
+        break; 
+    }
+    printf ("\n");
+    if (p == 0)
+    printf ("Opa! A matriz de ordem %iX%i é um quadrado latino!\n", n, m);
+
+    return 0;
+}
