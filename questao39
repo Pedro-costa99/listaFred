@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main()
+{   setlocale(LC_ALL, "");
+    int digito [4] = {};
+    int numeroAgencia [5] = {};
+    int calculo = 0 ;
+    int resto;
+    int verificador;
+
+    for (int i = 0; i < 4;i++){
+    printf("Informe o %iº dígito de sua agência: \n", i+1);
+    scanf ("%i", &digito [i]);
+    }
+
+    for (int i = 5, j = 1; i >= 2, j <=4; i--, j++){
+
+        calculo = calculo + (digito [j] * i);
+    }
+
+    resto = calculo %11;
+    verificador = 11 - resto;
+
+
+    for (int i = 0; i <= 0; i++){
+        if (verificador == 10)
+        printf("Agência: %i%i%i%i-X", digito [i], digito [i + 1], digito [i + 2], digito [i + 3]);
+
+    else
+        printf("Agência: %i%i%i%i-%i", digito [i], digito [i + 1], digito [i + 2], digito [i + 3], verificador);
+    }
+
+
+    return 0;
+}
